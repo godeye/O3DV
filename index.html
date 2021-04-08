@@ -16,9 +16,10 @@
 
 <body>
     <script type="text/javascript">
-        var url = new URL(window.location.href);
+        var url_string = window.location.href;
+        var url = new URL(url_string);
         var gltf = url.searchParams.get("gltf");
-        document.getElementById("gltf_id").innerHTML=gltf;
+        document.getElementById('gltf_id').innerHTML=gltf;
     </script>
     
     <div id="gltf_id" class="online_3d_viewer" 
