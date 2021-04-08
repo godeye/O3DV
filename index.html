@@ -15,16 +15,17 @@
 </head>
 
 <body>
-    <div class="online_3d_viewer"
-        <script type="text/javascript">
-            var url_string = window.location.href;
-            var url = new URL(url_string);
-            var gltf = url.searchParams.get("gltf");
-        </script>
-        
-        style="width: 800px; height: 600px;"
-        model="gltf"
-        camera="3,1,2,0,0,0,0,0,1">
+    <script type="text/javascript">
+        var url = new URL(window.location.href);
+        var gltf = url.searchParams.get("gltf");
+        document.getElementById('gltf_id').innerHTML=ball;
+    </script>
+    
+    <div class="online_3d_viewer" 
+         id=gltf_id
+         style="width: 800px; height: 600px;"
+         model="gltf_id"
+         camera="3,1,2,0,0,0,0,0,1">
     </div>
         }
     </script>
