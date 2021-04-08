@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-
-    <title>Online 3D Viewer</title>
-
-    <script type="text/javascript" src="three.min-126.js"></script>
-    <script type="text/javascript" src="o3dv.min-0.7.6.js"></script>
-    <script type='text/javascript'>
-        OV.Init3DViewerElements ();
-    </script>
-</head>
-
-<body onload="load_gltf()">
-    <script>
-    function load_gltf() {
-        var url_string = new URL(window.location.href);
-        var gltf = url_string.searchParams.get("gltf");
-        document.getElementByModel('gltf_id').innerHTML=gltf;
-   }
-    </script>
-    
-    <div id ="gltf_id" class="online_3d_viewer"
-         style="width: 800px; height: 600px;"
-         model="gltf_id"
-         camera="3,1,2,0,0,0,0,0,1">
-    </div>
-</body>
-
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Glorvia Model Viewer</title>
+        <style>body, model-viewer { width: 100%; height: 100%; margin: 0; padding: 0; }</style>
+    </head>
+    <body>
+        <div id="model-wrapper"></div>
+        
+        <script type="text/javascript" src="three.min-126.js"></script>
+        <script type="text/javascript" src="o3dv.min-0.7.6.js"></script>   
+        <script type='text/javascript'>
+            OV.Init3DViewerElements ();
+            var model = window.location.search.split('model=')[1];
+            var html =
+            `<div class="online_3d_viewer"
+                width="800" height="600"
+                model="`+ model + `"
+                camera="0,0,1,0,0,0,0,1,0">
+            </div>`;
+            document.getElementById("model-wrapper").innerHTML = html;
+        </script>
+    </body>
 </html>
