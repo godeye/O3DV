@@ -15,14 +15,19 @@
 </head>
 
 <body>
-    <script type="text/javascript">
+    <script>
+    function load_gltf() {
         var url_string = window.location.href;
         var url = new URL(url_string);
         var gltf = url.searchParams.get("gltf");
         document.getElementById('gltf_id').innerHTML=gltf;
+   }
     </script>
     
-    <div id="gltf_id">
+    <div id="gltf_id"  class="online_3d_viewer"
+         style="width: 800px; height: 600px;"
+         model="gltf_id"
+         camera="3,1,2,0,0,0,0,0,1">
     </div>
 </body>
 
