@@ -19,11 +19,11 @@
     function load_gltf() {
         var url_string = new URL(window.location.href);
         var gltf = url_string.searchParams.get("gltf");
-        document.getElementById('gltf_id').innerHTML=gltf;
+        document.getElementByModel('gltf_id').innerHTML=gltf;
    }
     </script>
     
-    <div id="gltf_id" class="online_3d_viewer"
+    <div class="online_3d_viewer"
          style="width: 800px; height: 600px;"
          model="gltf_id"
          camera="3,1,2,0,0,0,0,0,1">
