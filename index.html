@@ -17,8 +17,7 @@
 <body>
     <script>
     function load_gltf() {
-        var url_string = window.location.href;
-        var url = new URL(url_string);
+        var url = new URL(window.location.href);
         var gltf = url.searchParams.get("gltf");
         document.getElementById('gltf_id').innerHTML=gltf;
    }
